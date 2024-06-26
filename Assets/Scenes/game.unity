@@ -302,13 +302,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 3.5, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &2020374910
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +340,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimension: {x: 4, y: 3}
   offset: 0.5
-  prefab: {fileID: 1530132867647773226, guid: 7a56293640413054eaebd4e19682d685, type: 3}
+  slotPrefab: {fileID: 1530132867647773226, guid: 7a56293640413054eaebd4e19682d685, type: 3}
+  p1Prefab: {fileID: 3284797601697891821, guid: d1e085b084e016940ac9e8216fdbe988, type: 3}
+  p2Prefab: {fileID: 6228878561893202786, guid: 86ab3ca935e18d74a864e20bb19baec0, type: 3}
 --- !u!4 &2020374912
 Transform:
   m_ObjectHideFlags: 0
