@@ -949,7 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742128f396aa1874c98da9de46bb42ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimension: {x: 4, y: 3}
+  dimension: {x: 3, y: 3}
   offset: 0.5
   slotPrefab: {fileID: 1530132867647773226, guid: 7a56293640413054eaebd4e19682d685, type: 3}
   p1Prefab: {fileID: 3284797601697891821, guid: d1e085b084e016940ac9e8216fdbe988, type: 3}

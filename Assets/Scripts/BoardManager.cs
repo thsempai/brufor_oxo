@@ -23,6 +23,15 @@ public class BoardManager : MonoBehaviour
 
     private int currentPlayer = 1;
 
+    public bool isFull{
+        get{
+            for(int x = 0; x < dimension.x; x++)
+                for(int y = 0; y < dimension.y; y++)
+                   if(board[x, y] == 0) return false;      
+            return true;
+            }
+        }
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -41,7 +50,7 @@ public class BoardManager : MonoBehaviour
             for(int y = 0; y < dimension.y; y++){
                 Vector3 position = new(
                     x * (prefabSize.x + offset), transform.position.y, y * (prefabSize.z + offset));
-                position = position + origin;
+                position += origin;
                 GameObject newSlot = Instantiate(slotPrefab, position, slotPrefab.transform.rotation);
                 board[x, y] = 0;
                 newSlot.GetComponent<Slot>().AssignManager(this, x, y);
@@ -56,6 +65,7 @@ public class BoardManager : MonoBehaviour
             board[slot.x, slot.y] = 0;
             slot.Clear();
         }
+        gameIsOver = false;
     }
 
     public void AddToken(Slot slot)
@@ -69,8 +79,16 @@ public class BoardManager : MonoBehaviour
         if(CheckWinner(slot.x, slot.y)){
             whenGamesEnd?.Invoke($"Player {currentPlayer} wins!");
             gameIsOver = true;
+            currentPlayer = 1;
         }
-        currentPlayer = currentPlayer==1 ? 2 : 1;
+        else if(isFull){
+            whenGamesEnd?.Invoke($"No winner!");
+            gameIsOver = true;
+            currentPlayer = 1;
+        }
+        else{
+            currentPlayer = currentPlayer==1 ? 2 : 1;
+        }
     }
 
     private bool CheckWinner(int x, int y){
